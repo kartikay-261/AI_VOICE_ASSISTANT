@@ -1,6 +1,6 @@
 # AI_VOICE_ASSISTANT
 
-![alt text](https://github.com/kartikay-261/AI_VOICE_ASSISTANT/blob/main/AI%20voice%20assistant.png)
+![alt text](https://github.com/kartikay-261/AI_VOICE_ASSISTANT/blob/main/AI%20voice%20assistant%20(1).png)
 The above diagram shows a schematic view of the pipeline that I had in mind however due to constraints from the Google Cloud Personal account my cloud bucket exceeded quota and I had to shift the storage space to my local storage. I planned on developing an ETL pipeline to execute this however I had to compromise with an E2E python pipeline for this project. Given a company’s resources of AWS or GCP this could be changed to a cloud-based project orchestrated by Kubernetes.
 The pipeline begins with a Gradio interface taking in the audio file and the required parameters as specified by the assignment PDF (GENDER, PITCH, RATE, VOLUME). These parameters and the audio are passed on to the pipeline. The pipeline has the following four processes.
 1. Audio filtering step: The passed-on audio sample is first resampled to 16k Hz accepted by our library Silerio-VAD. We get the timestamps for voice activity from this function and trim the parts with no voice activity. This audio is then used for the STT conversion. The audio is then resampled to its original sampling rate.![alt text](https://github.com/kartikay-261/AI_VOICE_ASSISTANT/blob/main/download.png)
